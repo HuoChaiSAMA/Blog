@@ -1,0 +1,183 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: H.C.Blog
+subtitle: 'Mdae With Love By HuoChaiSAMA,Henry'
+description: 'Blog'
+# 网站图标，更多尺寸等图标请使用 import 方式批量导入
+favicon: https://cdn.jsdelivr.net/gh/HuoChaiSAMA/BlogImage@main/img/favicon.ico
+keywords:
+author: HuoChaiSAMA
+language:
+  - zh-CN
+  - en
+  - zh-TW
+timezone: ''
+
+# URL
+## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
+url: https://huochaisama.github.io
+root: /
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+pretty_urls:
+  trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
+  trailing_html: true # Set to false to remove trailing '.html' from permalinks
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link:
+  enable: true # Open external links in new tab
+  field: site # Apply to the whole site
+  exclude: ''
+filename_case: 0
+render_drafts: false
+post_asset_folder: true
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace: ''
+  wrap: true
+  hljs: false
+prismjs:
+  enable: false
+  preprocess: true
+  line_number: true
+  tab_replace: ''
+
+# Home page setting
+# path: Root path for your blogs index page. (default = '')
+# per_page: Posts displayed per page. (0 = disable pagination)
+# order_by: Posts order. (Order by date descending by default)
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: -date
+
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Metadata elements
+## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
+meta_generator: true
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+## updated_option supports 'mtime', 'date', 'empty'
+updated_option: 'mtime'
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 10
+pagination_dir: page
+
+# Include / Exclude file(s)
+## include:/exclude: options only apply to the 'source/' folder
+include:
+exclude:
+ignore:
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: volantis
+# Deployment
+## Docs: https://hexo.io/docs/one-command-deployment
+deploy:
+  # - type: git
+  #   repo: git@154.3.1.117:/home/git/blog.git
+  #   branch: master
+  - type: git
+    repo: https://github.com/HuoChaiSAMA/HuoChaiSAMA.github.io.git
+    branch: main
+  
+
+#Search
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit : 10000
+
+
+# Waline Config File
+# For more information:
+# - https://waline.js.org
+# - https://waline.js.org/reference/component.html
+waline:
+  # New! Whether enable this plugin
+  enable: false
+
+  # Waline server address url, you should set this to your own link
+  serverURL: https://waline.vercel.app
+
+  # Waline library CDN url, you can set this to your preferred CDN
+  libUrl: https://unpkg.com/@waline/client@v2/dist/waline.js
+
+  # Waline CSS styles CDN url, you can set this to your preferred CDN
+  cssUrl: https://unpkg.com/@waline/client@v2/dist/waline.css
+
+  # Custom locales
+  # locale:
+  #   placeholder: Welcome to comment # Comment box placeholder
+
+  # If false, comment count will only be displayed in post page, not in home page
+  commentCount: true
+
+  # Pageviews count, Note: You should not enable both `waline.pageview` and `leancloud_visitors`.
+  pageview: false
+
+  # Custom emoji
+  # emoji:
+  #   - https://unpkg.com/@waline/emojis@1.0.1/weibo
+  #   - https://unpkg.com/@waline/emojis@1.0.1/alus
+  #   - https://unpkg.com/@waline/emojis@1.0.1/bilibili
+  #   - https://unpkg.com/@waline/emojis@1.0.1/qq
+  #   - https://unpkg.com/@waline/emojis@1.0.1/tieba
+  #   - https://unpkg.com/@waline/emojis@1.0.1/tw-emoji
+
+  # Comment infomation, valid meta are nick, mail and link
+  # meta:
+  #   - nick
+  #   - mail
+  #   - link
+
+  # Set required meta field, e.g.: [nick] | [nick, mail]
+  # requiredMeta:
+  #   - nick
+
+  # Language, available values: en-US, zh-CN, zh-TW, pt-BR, ru-RU, jp-JP
+  # lang: zh-CN
+
+  # Word limit, no limit when setting to 0
+  # wordLimit: 0
+
+  # Whether enable login, can choose from 'enable', 'disable' and 'force'
+  # login: enable
+
+  # comment per page
+  # pageSize: 10
+
