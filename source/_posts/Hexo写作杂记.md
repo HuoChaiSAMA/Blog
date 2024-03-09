@@ -1,11 +1,15 @@
 ---
+abbrlink: ''
+categories:
+- Web
+date: '2022-11-26T09:24:32+08:00'
+plugins:
+- katex
+readmore: true
+tags:
+- Hexo
 title: first-page
-date: 2022-11-26 09:24:32
-tags: 
-  - Hexo 
-categories: 
-  - Web
-
+updated: '2024-03-09T13:17:19.288+08:00'
 ---
 hi! 这里是HuoChaiSAMA(Henry) 的第一篇Post！欢迎来到[HuoChai空间-Blog板块！](http://blog.hcspace.top/hexo/)
 
@@ -48,18 +52,19 @@ categories:
 
 这就是 **Front-matter** ，指这个文件的变量，类似于声明函数。hexo会根据此处内容在你 `$ hexo g` 时按此处内容进行页面生成、管理。具体释义如下：
 
-| 参数              | 描述                       | 默认值               |
-| ----------------- | -------------------------- | -------------------- |
-| `layout`          | 布局                       | 略                   |
-| `title`           | 标题                       | 文章的文件名         |
-| `date`            | 建立日期                   | 文件建立日期         |
-| `comments`        | 开启文章的评论功能         | true                 |
-| `tags`            | 标签                       |                      |
-| `categories`      | 分类                       |                      |
-| `permalink`       | 覆盖文章地址（什么鬼）     |                      |
-| `excerpt`         | 纯文本的页面摘要（？？？） |                      |
-| `disableNunjucks` | 自己去官网看               |                      |
-| `lang`            | 设置语言以**覆盖自动检测** | 继承自 `_config.yml` |
+
+| 参数              | 描述                       | 默认值              |
+| ----------------- | -------------------------- | ------------------- |
+| `layout`          | 布局                       | 略                  |
+| `title`           | 标题                       | 文章的文件名        |
+| `date`            | 建立日期                   | 文件建立日期        |
+| `comments`        | 开启文章的评论功能         | true                |
+| `tags`            | 标签                       |                     |
+| `categories`      | 分类                       |                     |
+| `permalink`       | 覆盖文章地址（什么鬼）     |                     |
+| `excerpt`         | 纯文本的页面摘要（？？？） |                     |
+| `disableNunjucks` | 自己去官网看               |                     |
+| `lang`            | 设置语言以**覆盖自动检测** | 继承自`_config.yml` |
 
 ### 分类和标签
 
@@ -182,7 +187,6 @@ categories:
 > [写法1](https://www.baidu.com)
 > [写法2][1]
 
-[1]: https://www.baidu.com
 ### 5.图片
 
 ```markdown
@@ -207,9 +211,12 @@ categories:
 ```
 
 > + 一层
+>
 >   - 二层
 >   - 二层
+>
 >   * 三层
+>
 >   + 四层
 > + 一层
 
@@ -311,9 +318,10 @@ int main(){
 |电脑|1|\$1000|
 ```
 
+
 | 商品 | 数量 |  单价  |
 | ---- | ---: | :----: |
-| 苹果 |   10 |  \$1   |
+| 苹果 |   10 |  \$1  |
 | 电脑 |    1 | \$1000 |
 
 ### 12.流程图（我不想看,照搬）
@@ -365,16 +373,15 @@ cond(no)->sub->io
 
 ```markdown
 这是一个公式 $\sum_{i=1}^n a_i=0$
-这个公式不听话$$You=s*b$$
+这个公式不听话$$E=mc^2$$
 ```
 
-> 这是一个公式  \sum_{i=1}^n a_i=0
+> 这是一个公式  $\sum_{i=1}^n a_i=0$
 > 这个公式不听话
 >
 > $$
-> You=s*b
+> E =  mc^2
 > $$
->
 
 支持 **LaTex** 编辑显示，访问 [MathJax](http://meta.math.stackexchange.com/questions/5020/mahtjax-basic-tutorial-and-quick-reference)参考更多使用方法。
 
@@ -420,3 +427,5 @@ $ hexo clean & hexo g & hexo d
 [网站搭建教程（详细步骤 ）](https://blog.csdn.net/bakelFF/article/details/122226529)
 [服务器宝塔一键部署Discuz论坛](https://boke112.com/post/9895.html)
 [Markdown语法介绍（详细）](https://blog.csdn.net/afei__/article/details/80717153)
+
+[1]: https://www.baidu.com
