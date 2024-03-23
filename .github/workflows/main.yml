@@ -24,7 +24,7 @@ jobs:
       - name: 安装 Hexo CI
         run: 
           # export TZ='Asia/Shanghai'
-          npm install gulp --save-dev
+          # npm install gulp --save-dev
           npm install -g hexo-cli
 
       - name: 缓存
@@ -41,7 +41,8 @@ jobs:
 
       - name: 部署博客
         run: 
-          hexo clean && hexo g && hexo douban && ./node_modules/gulp
+          hexo clean && hexo g && hexo douban 
+          # && gulp
           cd ./public
           git init
           git config user.name "${{secrets.GIT_NAME}}"
