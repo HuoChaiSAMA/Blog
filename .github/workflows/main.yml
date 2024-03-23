@@ -41,7 +41,7 @@ jobs:
 
       - name: 部署博客
         run: 
-          hexo clean && hexo g && hexo douban && gulp
+          hexo clean && hexo g && hexo douban && ./node_modules/gulp
           cd ./public
           git init
           git config user.name "${{secrets.GIT_NAME}}"
