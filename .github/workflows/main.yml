@@ -5,6 +5,54 @@ on:
     branches:
       - main
 
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     strategy:
+#       matrix:
+#         node-version: [18.x]
+
+#     steps:
+#       - name: 开始运行
+#         uses: actions/checkout@v1
+
+#       - name: 设置 Node.js ${{ matrix.node-version }}
+#         uses: actions/setup-node@v1
+#         with:
+#           node-version: ${{ matrix.node-version }}
+
+#       - name: 安装 Hexo CI
+#         run: 
+#           # export TZ='Asia/Shanghai'
+#           # npm install gulp --save-dev
+#           npm install -g hexo-cli
+
+#       - name: 缓存
+#         uses: actions/cache@v1
+#         id: cache-dependencies
+#         with:
+#           path: node_modules
+#           key: ${{runner.OS}}-${{hashFiles('**/package-lock.json')}}
+
+#       - name: 安装插件
+#         if: steps.cache-dependencies.outputs.cache-hit != 'true'
+#         run: 
+#           npm install
+
+#       - name: 部署博客
+#         run: 
+#           hexo clean && hexo g && hexo douban 
+#           cd ./public
+#           git init
+#           git config user.name "${{secrets.GIT_NAME}}"
+#           git config user.email "${{secrets.GIT_EMAIL}}"
+#           git add .
+#           git commit -m "Update"
+#           git push --force --quiet "https://${{secrets.GH_TOKEN}}@${{secrets.GH_REF}}" main:main
+#           git push --force --quiet "https://${{secrets.CD_TOKEN}}@${{secrets.CD_REF}}" main:main
+
+
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -21,32 +69,36 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: 安装 Hexo CI
-        run: 
-          # export TZ='Asia/Shanghai'
-          # npm install gulp --save-dev
-          npm install -g hexo-cli
+      - name: 配置 Git 环境
+        env:
+          ACTION_DEPLOY_KEY: ${{ secrets.ACTION_DEPLOY_KEY }}
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          git config --global user.name "${{secrets.GIT_NAME}}"
+          git config --global user.email "${{secrets.GIT_EMAIL}}"
 
-      - name: 缓存
-        uses: actions/cache@v1
-        id: cache-dependencies
-        with:
-          path: node_modules
-          key: ${{runner.OS}}-${{hashFiles('**/package-lock.json')}}
+      - name: 安装 Hexo CI
+        run: |
+          # export TZ='Asia/Shanghai'
+          npm i -g hexo-cli
+          npm i
 
       - name: 安装插件
-        if: steps.cache-dependencies.outputs.cache-hit != 'true'
-        run: 
-          npm install
+        run: |
+          npm install hexo-renderer-pug --save
+          npm install hexo-renderer-stylus --save
+          npm install hexo-deployer-git --save
+          npm install hexo-generator-search --save
+          npm install hexo-douban --save
+          npm install hexo-generator-feed --save
+          npm install hexo-abbrlink --save
+          npm install hexo-wordcount --save
 
       - name: 部署博客
-        run: 
-          hexo clean && hexo g && hexo douban 
-          cd ./public
-          git init
-          git config user.name "${{secrets.GIT_NAME}}"
-          git config user.email "${{secrets.GIT_EMAIL}}"
-          git add .
-          git commit -m "Update"
-          git push --force --quiet "https://${{secrets.GH_TOKEN}}@${{secrets.GH_REF}}" main:main
-          git push --force --quiet "https://${{secrets.CD_TOKEN}}@${{secrets.CD_REF}}" main:main
+        run: |
+          rm -rf .deploy_git
+          hexo g && hexo douban && hexo deploy
+          rm ~/.ssh/id_rsa
