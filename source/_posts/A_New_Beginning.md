@@ -1,7 +1,7 @@
 ---
 abbrlink: 有形的东西迟早会凋零，但只有回忆是永远不会凋零的。
 categories:
-- - Web
+- - H.C.Space
 date: '2024-01-27T22:23:09.810173+08:00'
 description: 有形的东西迟早会凋零，但只有回忆是永远不会凋零的。
 excerpt: 有形的东西迟早会凋零，但只有回忆是永远不会凋零的。
@@ -13,10 +13,8 @@ plugins:
 readmore: true
 tags:
 - Update
-- Say Goodbye
-- Say Hello
 title: 新的开始
-updated: 2024-1-27T22:49:1.895+8:0
+updated: '2024-04-13T16:39:36.849+08:00'
 ---
 # 新的开始!
 
