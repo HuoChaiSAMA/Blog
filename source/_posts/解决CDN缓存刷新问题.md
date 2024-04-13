@@ -4,15 +4,15 @@ categories:
 - - Web
 date: '2023-11-12T11:20:24.161267+08:00'
 description: null
-excerpt: 开发记录 问题描述 假如你很早之前访问过我的站点（就是去年，当时我还没有绘制站点logo，用的是原作者imsyy的logo（就是那个钟）），你就会发现：最近的更新logo和字体都没有变化  这是为什么呢？ 原因分析 因为我们的浏览器在访问一个页面时，里面的图片之类的东西一般都不会改变，所以我们的浏览器就聪明地把他们都存在了本地，（这就是缓存，cache）下一次访问直接访问本地缓存就行了，大大滴提高...
+excerpt: Edge开始给我出难题...
 headimg: https://s2.loli.net/2023/11/12/oRp2BbrUPkT1lJ3.jpg
 keywords: null
 pin: null
 readmore: true
 tags:
-- Update
+- Edge
 title: '解决CDN缓存刷新问题 '
-updated: 2023-11-12T11:55:43.764+8:0
+updated: '2024-04-13T16:45:48.939+08:00'
 ---
 # 开发记录
 
