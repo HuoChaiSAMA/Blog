@@ -1,17 +1,16 @@
 ---
 abbrlink: MC_Server
 categories:
-- - Minecraft
+- - Game
 date: '2023-06-22T09:04:20.678291+08:00'
 description: H.C.Server 开始启动！
 headimg: https://s2.loli.net/2024/04/13/23MpshaJnI6kZRy.png
 keywords: Minecraft
 readmore: true
 tags:
-- Web
-- Game
+- Minecraft
 title: Minecraft Server
-updated: '2024-04-13T13:37:14.578+08:00'
+updated: '2024-04-13T16:42:12.688+08:00'
 ---
 # Henry's Minecraft Server!!!
 
