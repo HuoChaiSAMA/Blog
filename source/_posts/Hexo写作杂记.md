@@ -1,7 +1,7 @@
 ---
 abbrlink: ''
 categories:
-- Web
+- - Hexo
 date: '2022-11-26T09:24:32+08:00'
 plugins:
 - katex
@@ -9,7 +9,7 @@ readmore: true
 tags:
 - Hexo
 title: first-page
-updated: '2024-03-23T11:03:29.591+08:00'
+updated: '2024-04-13T16:41:07.938+08:00'
 ---
 hi! 这里是HuoChaiSAMA(Henry) 的第一篇Post！欢迎来到[HuoChai空间-Blog板块！](http://blog.hcspace.top/hexo/)
 
