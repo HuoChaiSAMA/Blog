@@ -111,18 +111,18 @@ navbar:
       - name: 主题源码
         url: https://github.com/volantis-x/hexo-theme-volantis/
       - name: 更新日志
-        url: https://github.com/volantis-x/hexo-theme-volantis/releases/
+        url: https://github.com/HuoChaiSAMA/Blog/commits/main/
       - name: 暗黑模式
         icon: fa-solid fa-moon
         toggle: darkmode
-  search: Search...   # Search bar placeholder
+  search: Searching...  # Search bar placeholder
 ############################### Navigation Bar ############################### > end
 
 
 ############################### Cover ############################### > start
 cover:
   height_scheme: full # full, half
-  layout_scheme: search # blank (留白), search (搜索), dock (坞), featured (精选), focus (焦点)
+  layout_scheme: dock # blank (留白), search (搜索), dock (坞), featured (精选), focus (焦点)
   display:
     home: true
     archive: true
@@ -131,8 +131,8 @@ cover:
   # background: https://bing.ioliu.cn/v1/rand?w=1920&h=1200
   logo: https://s2.loli.net/2024/01/27/mC7X2rhuVZ5Boz8.png
   title: 'H.C.Blog'
-  subtitle: ''
-  search: HuoChaiSAMA's Blog # search bar placeholder
+  subtitle: 'Henry的博客小站'
+  search: Searching HuoChaiSAMA's Blog # search bar placeholder
   features:
     - name: 博客
       icon: #
@@ -341,11 +341,14 @@ comments:
     # 以下配置按照 yml 格式增删填写即可
     repo: HuoChaiSAMA/Giscus
     repo-id: R_kgDOJlmZKA
-    category: Announcement
+    category: Announcements
     category-id: DIC_kwDOJlmZKM4CWofe
     mapping: "pathname"
+    strict: "0"
     reactions-enabled: "1"
     emit-metadata: "0"
+    input-position: "top"
+    loading: "lazy"
     lang: "zh-CN"
     # 以上配置按照 yml 格式增删填写即可
     theme:
@@ -644,7 +647,7 @@ site_footer:
     <span id="lc-sv">本站总访问量为 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 次</span>
     <span id="lc-uv">访客数为 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 人</span>
   # site copyright
-  copyright: '[Copyright © since 2017 XXX](/)'
+  copyright: '[Copyright © since 2022 HuoChaiSAMA(Henry)](/)'
   # You can add your own property here. (Support markdown, for example: br: '<br>')
   br: '<br>'
 ############################### Site Footer ############################### > end
