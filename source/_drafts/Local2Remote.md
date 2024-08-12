@@ -15,7 +15,7 @@ tags:
 - Update
 - Qexo
 title: 走向远程化
-updated: '2024-08-11T21:26:37.296+08:00'
+updated: '2024-08-12T09:09:16.363+08:00'
 ---
 ## 前言
 
@@ -43,9 +43,9 @@ updated: '2024-08-11T21:26:37.296+08:00'
 
 已解决。详见[Vercel 部署 (PostgreSQL/Vercel) Redeploy 时报错：./migrate.sh: line 1: pip: command not found · Issue #524 · Qexo/Qexo (github.com)](https://github.com/Qexo/Qexo/issues/524)
 
-详细解决方案：将**nodejs**版本降至`18.x`
+解决方案：将**nodejs**版本降至`18.x`
 
-详细步骤：
+详细步骤：**Vercel** -> 你的**Qexo Project** -> **Settings** -> **General** -> **Node.js Version** -> 将`20.x`改为`18.x`
 
 然后**Redeploy**，问题解决。
 
@@ -53,4 +53,18 @@ updated: '2024-08-11T21:26:37.296+08:00'
 
 ### 1. Vercel App 无法访问 & Github Pages 访问过慢
 
-由于 **Vercel** 和 **Github** 服务器都在国外，导致在国内访问有那么一点点麻烦。**Vercel** 有专门开的解析ip，而**Github Pages** 作为静态网页可以通过**CDN服务器**达到加速访问，这两个需求恰好可以通过**Cloudflare**的网络服务达成。
+由于 **Vercel** 和 **Github** 服务器都在国外，导致在国内访问有那么一点点麻烦。**Vercel** 有专门开的解析ip，而**Github Pages** 作为静态网页可以通过**CDN服务器**达到加速访问，这两个需求恰好可以通过**Cloudflare**的网络服务达成。下面介绍**Cloudflare**服务开通全过程。
+
+### 2. 开通Cloudflare服务
+
+注册**Cloudflare**账号后，在**Dashboard侧边栏**选择**网站**服务，在随后的页面输入你购买好的域名。（不要加主机名！！！）
+
+![输入你的域名，注意不要加www](https://s2.loli.net/2024/08/12/EB8IhWjlG4a5Hsz.png)
+
+接下来，选择**Free计划**，并开通服务。
+
+![](https://s2.loli.net/2024/08/12/VqGKiHjongZd7JD.png)
+
+接下来的页面为**DNS解析**管理和**DNS服务器**修改指引，在你的**域名管理后台**处的**DNS服务器**修改为**Cloudflare**提供的服务器地址，使**Cloudflare**完全**接管**你的域名的DNS。到此，**Cloudflare服务**开通完成。
+
+![](https://s2.loli.net/2024/08/12/KV1cObvD5xioeCH.png)
