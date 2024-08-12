@@ -86,7 +86,3 @@ updated: '2024-08-12T19:50:54.318+08:00'
 到此，你可以使用`xxx.example.com`访问你的**vercel app**了。继续配置Qexo即可。
 
 ### 4. 为Github Pages加速
-
-上课去了，过会儿写。
-
-{% note warning:: test%}
