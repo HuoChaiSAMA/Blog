@@ -7,7 +7,7 @@ description: null
 excerpt: H.C.Blog 的第一个完全体
 headimg: https://s2.loli.net/2024/04/13/hgbzfKLNrcUYHR6.png
 keywords: null
-pin: true
+pin: false
 plugins:
 - katex
 readmore: true
@@ -15,7 +15,7 @@ tags:
 - Release
 - Update
 title: H.C.Blog-v1.0.0
-updated: '2024-04-13T16:22:18.094+08:00'
+updated: '2024-08-12T08:47:35.843+08:00'
 ---
 ## 博客信息
 
