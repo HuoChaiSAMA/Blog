@@ -15,7 +15,7 @@ tags:
 - Update
 - Qexo
 title: 走向远程化
-updated: '2024-08-12T19:50:54.318+08:00'
+updated: '2024-08-13T11:05:41.370+08:00'
 ---
 ## 前言
 
@@ -26,6 +26,8 @@ updated: '2024-08-12T19:50:54.318+08:00'
 此外，鉴于hcspace.top这个域名还没有到期，就顺便使用[全球云平台 | Cloudflare 中国官网](https://www.cloudflare-cn.com/enterprise/)的免费**CDN缓存**服务，给**Vercel**与**Github Pages**访问进行了加速。现在不用担心访问过慢了。
 
 ![Cloudflare网络服务介绍](https://s2.loli.net/2024/08/11/PvytFpw3uGVMloh.png)
+
+另外，博客评论系统已经更新至[Twikoo | 一个简洁、安全、免费的静态网站评论系统](https://twikoo.js.org/)，现在评论不用登录Github了。~~（气死我了Edge）~~
 
 ## 一、Qexo 的 Vercel 部署
 
@@ -86,3 +88,48 @@ updated: '2024-08-12T19:50:54.318+08:00'
 到此，你可以使用`xxx.example.com`访问你的**vercel app**了。继续配置Qexo即可。
 
 ### 4. 为Github Pages加速
+
+#### 速度比较
+
+由于**Github Pages**为静态网页，我们可以使用**CDN**来缓存`.css`和`.js`文件，来减少客户端向Github请求的文件数量。使用**Cloudflare**的CDN缓存访问测速如下：
+
+![](https://s2.loli.net/2024/08/13/5G2JEReyx3ms19T.png)
+
+直接访问Github.IO的测速如下：
+
+![](https://s2.loli.net/2024/08/13/lvZH75D6NSmqVtM.png)
+
+虽然看似直连访问更快，但也可以看到实际上**并不稳定**，成都的两个节点**全部超时**。而且还有矮墙影响，有些时候根本无法连接。因此，我们选择更稳定的**Cloduflare的CDN缓存**
+
+#### CDN部署
+
+详见博客：[为Github page绑定自定义域名并实现https访问-CSDN博客](https://blog.csdn.net/yucicheung/article/details/79560027)。在域名解析时，我们使用**Cloudflare**的DNS解析即可。
+
+具体操作：
+
+##### 1.添加解析
+
+添加四个**A**类型解析与一个**CNAME**类型解析，如下：
+
+![](https://s2.loli.net/2024/08/13/izc8gQdSyFJx3KR.png)
+
+我的A类型解析是泛解析，你可以在此自定义主机名，注意**在Github上填写的是你设置A类型的域名**！！！
+
+几个ip：
+
+```powershell
+185.199.108.153
+185.199.109.153
+185.199.110.153
+185.199.111.153
+```
+
+其中`www`这个主机名指向你的github.io，使得`www.example.com`也能指向你的网站。
+
+##### 2.修改Github Pages Domian
+
+按如图所示设置你的自定义域名：
+
+![](https://s2.loli.net/2024/08/13/nR69t1LUpmQsSPM.png)
+
+设置之后，Github会检测你的DNS解析，检测成功后，你就可以通过`https://example.com`访问你的站点并启用CDN缓存了
