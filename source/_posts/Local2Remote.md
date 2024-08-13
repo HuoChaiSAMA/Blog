@@ -15,7 +15,7 @@ tags:
 - Update
 - Qexo
 title: 走向远程化
-updated: '2024-08-13T11:05:41.370+08:00'
+updated: '2024-08-13T19:56:34.970+08:00'
 ---
 ## 前言
 
@@ -132,4 +132,34 @@ updated: '2024-08-13T11:05:41.370+08:00'
 
 ![](https://s2.loli.net/2024/08/13/nR69t1LUpmQsSPM.png)
 
-设置之后，Github会检测你的DNS解析，检测成功后，你就可以通过`https://example.com`访问你的站点并启用CDN缓存了
+设置之后，**Github**会帮你在仓库根目录创建`CNAME`文件并检测你的**DNS解析**，检测成功后，你就可以通过`https://example.com`访问你的站点并启用CDN缓存了。
+
+当然，如果你是用的**Hexo**直接**Deploy**到**Github Pages仓库**中，**Hexo**会覆盖掉仓库的所有内容导致`CNAME`文件丢失。此时在博客仓库或本地博客目录中创建`Your-Hexo-Blog-Path\source\CNAME`文件，文件中输入你的自定义域名`example.com`并保存，这样**Hexo**在每次**Generate**的时候就会把`CNAME`文件附加到public文件夹里并同时部署了。
+
+你可以在**Cloudflare**仪表盘中的**缓存**选项中配置你的缓存计划。当你的站点更新涉及到被选中缓存的文件内容变动，但标识符未改变时，你也可以在这里删除你的CDN缓存对其进行刷新。
+
+![](https://s2.loli.net/2024/08/13/kUWzFjBXpMgIG9C.png)
+
+关于这方面操作涉及的实际问题，可参阅我的博客[解决CDN缓存刷新问题 - H.C.Blog (hcspace.top)](https://hcspace.top/2023/11/12/%E8%A7%A3%E5%86%B3CDN%E7%BC%93%E5%AD%98%E5%88%B7%E6%96%B0%E9%97%AE%E9%A2%98/)。该文章介绍的是**本地CDN文件**缓存刷新机制造成的问题，两者原理是相通的。但你不可能要求你的用户自行清空本地缓存文件，所以建议对文件的标识符进行版本区分。毕竟**Cloudflare**是在我们手里的。
+
+## 结尾 & 相关链接
+
+好了，这就是这篇博客的全部内容。
+
+### 相关网页
+
+{% link Vercel::https://vercel.com/::https://s2.loli.net/2024/08/13/5ScVwneNDGkTbdP.jpg %}
+
+{% link Cloudflare::https://www.cloudflare-cn.com/::https://s2.loli.net/2024/08/13/jxnViZSXE34dmuw.png %}
+
+{% link Qexo::https://www.oplog.cn/qexo/::https://s2.loli.net/2024/08/13/WtbqUKmGjuiNyzA.png%}
+
+### 相关博客
+
+[解决 Vercel 部署网站在国内被墙 | Zoey's Blog (blog-zoey.top)](https://blog-zoey.top/posts/vercel-dns-china)
+
+[【教程】Github Page 添加自定义域名\_github pages 自定义域名-CSDN博客](https://blog.csdn.net/qq_34902437/article/details/140298754)
+
+[为Github page绑定自定义域名并实现https访问-CSDN博客](https://blog.csdn.net/yucicheung/article/details/79560027)
+
+[Unavailable for your site because your domain is not properly configured to support HTTPS · community · Discussion #134087 (github.com)](https://github.com/orgs/community/discussions/134087)
