@@ -132,7 +132,7 @@ cover:
   logo: https://s2.loli.net/2024/01/27/mC7X2rhuVZ5Boz8.png
   title: 'H.C.Blog'
   subtitle: ''
-  search: Searching HuoChaiSAMA's Blog # search bar placeholder
+  search: 搜索文章内容 # search bar placeholder
   features:
     - name: 博客
       icon: #
