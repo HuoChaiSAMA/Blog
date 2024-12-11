@@ -10,7 +10,7 @@ readmore: true
 tags:
 - Minecraft
 title: Minecraft Server
-updated: '2024-04-13T16:42:12.688+08:00'
+updated: '2024-12-11T16:07:51.927+08:00'
 ---
 # Henry's Minecraft Server!!!
 
@@ -75,7 +75,7 @@ updated: '2024-04-13T16:42:12.688+08:00'
 
 使用**KOOK服务器**
 
-邀请链接： [KOOK (kookapp.cn)](https://www.kookapp.cn/app/invite/DbpsA9)
+邀请链接： [KOOK (kookapp.cn)（链接已关闭）](/)
 
 # 其他
 
