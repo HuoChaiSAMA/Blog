@@ -15,7 +15,7 @@ tags:
 - Release
 - Update
 title: H.C.Blog-v1.0.0
-updated: '2024-08-12T08:47:35.843+08:00'
+updated: '2024-12-11T16:10:41.094+08:00'
 ---
 ## 博客信息
 
@@ -28,6 +28,7 @@ updated: '2024-08-12T08:47:35.843+08:00'
 * 更新了评论系统
   * 服务商：[giscus/giscus: A comment system powered by GitHub Discussions. :speech\_balloon: :gem:](https://github.com/giscus/giscus)
   * 评论方式：Github登录后评论
+  * 注(2024-12-11)：评论服务商已经更换为[Twikoo](https://twikoo.js.org/)
 * 更改了封面格式
 * 适配了基础插件
 * 修改了分类布局，删改了部分文章
@@ -39,8 +40,6 @@ updated: '2024-08-12T08:47:35.843+08:00'
 这个版本完全实现了**Hexo+Volantis**博客的基础功能
 
 一段时间内不会对博客框架进行较大改动
-
-后续尝试使用**vitepress**构建，但这是一段时间之后的事情了
 
 ## 链接
 
