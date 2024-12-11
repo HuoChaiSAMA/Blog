@@ -3,7 +3,7 @@ abbrlink: ''
 categories: []
 date: '2023-11-26T09:22:02.845830+08:00'
 description: null
-excerpt:  来源：Volantis魔改教程 - DearXuan的主页(https://blog.dearxuan.com/2023/01/07/Volantis%E9%AD%94%E6%94%B9%E6%95%99%E7%A8%8B/#katex%E5%85%AC%E5%BC%8F%E6%B8%B2%E6%9F%93%E9%80%9A%E7%94%A8)  设函数f(x,y)的全微分为df(x,y)=(2...
+excerpt: 测试Latex/Katex是否正常运行
 headimg: null
 keywords: null
 pin: null
@@ -11,7 +11,7 @@ plugins: katex
 readmore: true
 tags: []
 title: KaTeX渲染测试
-updated: 2023-11-26T9:33:23.372+8:0
+updated: '2024-12-11T16:02:43.444+08:00'
 ---
 > 来源：[Volantis魔改教程 - DearXuan的主页](https://blog.dearxuan.com/2023/01/07/Volantis%E9%AD%94%E6%94%B9%E6%95%99%E7%A8%8B/#katex%E5%85%AC%E5%BC%8F%E6%B8%B2%E6%9F%93%E9%80%9A%E7%94%A8)(https://blog.dearxuan.com/2023/01/07/Volantis%E9%AD%94%E6%94%B9%E6%95%99%E7%A8%8B/#katex%E5%85%AC%E5%BC%8F%E6%B8%B2%E6%9F%93%E9%80%9A%E7%94%A8)
 
@@ -36,10 +36,7 @@ plugins:
   - katex
 ```
 
-
 $$
-解: 设需要x二氧化碳 \\
+解: 设需要二氧化碳质量为x\\
 \because CO_2 + Ca(OH)_2 = CaCO_3 \downarrow + H_2O \\
-s
 $$
- 
