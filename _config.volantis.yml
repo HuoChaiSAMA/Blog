@@ -448,7 +448,7 @@ comments:
     js: https://unpkg.com/twikoo@latest # 建议锁定版本
     path: # 全局评论地址
     # 其他配置项按照yml格式继续填写即可 除了 [el path] 选项
-    envId: https://twikoo.hcspace.top/ # 腾讯云环境id
+    envId: https://twikoo.henerii.cn/ # 腾讯云环境id
     placeholder: #全局评论占位，也可以在管理面板中的配置管理处设置（此处优先级更高）
 
   # Waline
@@ -1330,3 +1330,4 @@ structured_data:
       width: 192
       height: 192
 ############################### Structured Data ############################### > end
+
