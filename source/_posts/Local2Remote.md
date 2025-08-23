@@ -41,11 +41,6 @@ updated: '2025-08-23T17:45:03.024+08:00'
 
 ```powershell
 ./migrate.sh: line 1: pip: command not found
-
-```powershell
-./migrate.sh: line 1: pip: command not found
-
-
 ```
 
 已解决。详见[Vercel 部署 (PostgreSQL/Vercel) Redeploy 时报错：./migrate.sh: line 1: pip: command not found · Issue #524 · Qexo/Qexo (github.com)](https://github.com/Qexo/Qexo/issues/524)
@@ -130,24 +125,6 @@ updated: '2025-08-23T17:45:03.024+08:00'
 185.199.109.153
 185.199.110.153
 185.199.111.153
-```powershell
-185.199.108.153
-185.199.109.153
-185.199.110.153
-185.199.111.153
-
-```powershell
-185.199.108.153
-185.199.109.153
-185.199.110.153
-185.199.111.153
-```powershell
-185.199.108.153
-185.199.109.153
-185.199.110.153
-185.199.111.153
-
-
 ```
 
 其中`www`这个主机名指向你的github.io，使得`www.example.com`也能指向你的网站。
