@@ -15,7 +15,7 @@ tags:
 - Update
 - Qexo
 title: 走向远程化
-updated: '2024-08-13T19:56:34.970+08:00'
+updated: '2025-08-23T13:09:27.585+08:00'
 ---
 ## 前言
 
@@ -41,6 +41,9 @@ updated: '2024-08-13T19:56:34.970+08:00'
 
 ```powershell
 ./migrate.sh: line 1: pip: command not found
+```powershell
+./migrate.sh: line 1: pip: command not found
+
 ```
 
 已解决。详见[Vercel 部署 (PostgreSQL/Vercel) Redeploy 时报错：./migrate.sh: line 1: pip: command not found · Issue #524 · Qexo/Qexo (github.com)](https://github.com/Qexo/Qexo/issues/524)
@@ -122,6 +125,12 @@ updated: '2024-08-13T19:56:34.970+08:00'
 185.199.109.153
 185.199.110.153
 185.199.111.153
+```powershell
+185.199.108.153
+185.199.109.153
+185.199.110.153
+185.199.111.153
+
 ```
 
 其中`www`这个主机名指向你的github.io，使得`www.example.com`也能指向你的网站。
@@ -163,3 +172,11 @@ updated: '2024-08-13T19:56:34.970+08:00'
 [为Github page绑定自定义域名并实现https访问-CSDN博客](https://blog.csdn.net/yucicheung/article/details/79560027)
 
 [Unavailable for your site because your domain is not properly configured to support HTTPS · community · Discussion #134087 (github.com)](https://github.com/orgs/community/discussions/134087)
+
+
+## 2025-8-23 更新
+
+解决了 **Github Pages**无法勾选`Enforce HTTPS`的问题：
+在**Cloudflare**的`DNS配置`中将所有的有关**Github Pages**的记录从`代理`改为`仅DNS`
+
+`SSL限制模式`可以更改为`完全（严格）`
