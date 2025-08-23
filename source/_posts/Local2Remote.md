@@ -15,7 +15,7 @@ tags:
 - Update
 - Qexo
 title: 走向远程化
-updated: '2025-08-23T13:09:27.585+08:00'
+updated: '2025-08-23T13:27:45.176+08:00'
 ---
 ## 前言
 
@@ -173,10 +173,9 @@ updated: '2025-08-23T13:09:27.585+08:00'
 
 [Unavailable for your site because your domain is not properly configured to support HTTPS · community · Discussion #134087 (github.com)](https://github.com/orgs/community/discussions/134087)
 
-
 ## 2025-8-23 更新
 
 解决了 **Github Pages**无法勾选`Enforce HTTPS`的问题：
-在**Cloudflare**的`DNS配置`中将所有的有关**Github Pages**的记录从`代理`改为`仅DNS`
+在**Cloudflare**的`DNS配置`中将所有的有关**Github Pages**的记录从`代理`改为`仅DNS`。待**Github Pages**启用 `Entorce HTTPS`后再改回来。
 
 `SSL限制模式`可以更改为`完全（严格）`
