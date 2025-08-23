@@ -15,7 +15,7 @@ tags:
 - Update
 - Qexo
 title: 走向远程化
-updated: '2025-08-23T16:59:22.909+08:00'
+updated: '2025-08-23T17:45:03.024+08:00'
 ---
 ## 前言
 
@@ -41,6 +41,10 @@ updated: '2025-08-23T16:59:22.909+08:00'
 
 ```powershell
 ./migrate.sh: line 1: pip: command not found
+
+```powershell
+./migrate.sh: line 1: pip: command not found
+
 
 ```
 
@@ -83,6 +87,9 @@ updated: '2025-08-23T16:59:22.909+08:00'
 ![为Vercelapp配置域名](https://s2.loli.net/2024/08/12/o2g4YudZtQxnVGB.png)
 
 最后，你可以在**Cloudflare**中把**SSL/TLS模式**改为**严格**，防止多次重定向导致无法访问。但是这个操作会导致**Github Pages**如果没有开启**Enforce HTTPS**就无法访问，保持**完全**选项即可。
+
+{% note warning::Github Pages 无法开启Enforce HTTPS的问题已解决。详情请看本文最后2025-8-23更新内容！%}
+
 
 ![SSl/TLS模式](https://s2.loli.net/2024/08/12/Ihp6d3KGFMZw2g8.png)
 
@@ -128,6 +135,18 @@ updated: '2025-08-23T16:59:22.909+08:00'
 185.199.109.153
 185.199.110.153
 185.199.111.153
+
+```powershell
+185.199.108.153
+185.199.109.153
+185.199.110.153
+185.199.111.153
+```powershell
+185.199.108.153
+185.199.109.153
+185.199.110.153
+185.199.111.153
+
 
 ```
 
