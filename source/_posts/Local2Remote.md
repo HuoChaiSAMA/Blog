@@ -15,7 +15,7 @@ tags:
 - Update
 - Qexo
 title: 走向远程化
-updated: '2025-08-23T13:27:45.176+08:00'
+updated: '2025-08-23T16:59:22.909+08:00'
 ---
 ## 前言
 
@@ -39,8 +39,6 @@ updated: '2025-08-23T13:27:45.176+08:00'
 
 ![报错图片](https://s2.loli.net/2024/08/11/ajGqbyFJm2odnCv.jpg)
 
-```powershell
-./migrate.sh: line 1: pip: command not found
 ```powershell
 ./migrate.sh: line 1: pip: command not found
 
