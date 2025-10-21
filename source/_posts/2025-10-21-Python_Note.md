@@ -47,3 +47,13 @@ print(f"可以支持混合输出{a}")
 ```
 
 ### 2. math 库
+
+[Python取整——向上取整、向下取整、四舍五入取整、向0取整\_python 四舍五入取整-CSDN博客](https://blog.csdn.net/weixin_41712499/article/details/85208928)
+
+[Python输入的多种情况详细解读(单行、多行、数组......）\_python单行输入-CSDN博客](https://blog.csdn.net/qq_56177238/article/details/128261959)
+
+[Python round() 函数 | 菜鸟教程](https://www.runoob.com/python/func-number-round.html)
+
+[Python math 模块 | 菜鸟教程](https://www.runoob.com/python3/python-math.html)
+
+[Python 列表(List) | 菜鸟教程](https://www.runoob.com/python/python-lists.html)
