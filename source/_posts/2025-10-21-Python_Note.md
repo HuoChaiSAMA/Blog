@@ -4,7 +4,7 @@ categories:
 - - OI
 date: '2025-10-21T12:00:14.375041+08:00'
 description: null
-excerpt: null
+excerpt: 学校信息技术课上学习的**Pyhton**常用语法总结
 headimg: null
 keywords: null
 pin: null
@@ -42,8 +42,9 @@ list2 = list(input().split()) #无声明变量类型作用
 
 ```python
 a = 1.14514
-print(f"{a:.2f}") ## output： 1.14
+print(f"{a:.2f}") # output： 1.14
 print(f"可以支持混合输出{a}")
+# output: 可以支持混合输出1.14514 
 ```
 
 ### 2. math 库  与 相关操作
