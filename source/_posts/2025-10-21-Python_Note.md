@@ -14,7 +14,7 @@ readmore: true
 tags:
 - Python
 title: Python笔记
-updated: '2025-10-21T12:00:32.083+08:00'
+updated: '2025-11-02T08:11:34.568+08:00'
 ---
 ## 前言
 
@@ -46,7 +46,7 @@ print(f"{a:.2f}") ## output： 1.14
 print(f"可以支持混合输出{a}")
 ```
 
-### 2. math 库
+### 2. math 库  与 相关操作
 
 [Python取整——向上取整、向下取整、四舍五入取整、向0取整\_python 四舍五入取整-CSDN博客](https://blog.csdn.net/weixin_41712499/article/details/85208928)
 
