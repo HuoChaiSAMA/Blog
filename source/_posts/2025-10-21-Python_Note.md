@@ -4,7 +4,7 @@ categories:
 - - OI
 date: '2025-10-21T12:00:14.375041+08:00'
 description: null
-excerpt: 学校信息技术课上学习的**Pyhton**常用语法总结
+excerpt: 学校信息技术课上学习的 Pyhton 常用语法总结
 headimg: null
 keywords: null
 pin: null
@@ -14,7 +14,7 @@ readmore: true
 tags:
 - Python
 title: Python笔记
-updated: '2025-11-02T08:11:34.568+08:00'
+updated: '2026-01-10T23:07:30.176+08:00'
 ---
 ## 前言
 
