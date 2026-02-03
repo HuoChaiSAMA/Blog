@@ -254,7 +254,7 @@ article:
       # 默认文章作者（可在 _data/author.yaml 中增加其他作者，并在 front-matter 中设置）
       # https://volantis.js.org/advanced-settings/#多人协同
       author:
-        avatar: https://s2.loli.net/2024/01/27/mC7X2rhuVZ5Boz8.png # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/apple-touch-icon.png
+        avatar: https://s2.loli.net/2026/02/03/wnhqIXuGpEysgR9.png # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/apple-touch-icon.png
         name: HuoChaiSAMA(Henry)
         url: https://github.com/HuoChaiSAMA
       # 文章创建日期
