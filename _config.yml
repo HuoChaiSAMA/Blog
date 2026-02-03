@@ -114,7 +114,7 @@ deploy:
     # repo: git@github.com:HuoChaiSAMA/HuoChaiSAMA.github.io.git
     # branch: main
     repo: git@github.com:HuoChaiSAMA/hexo.git
-    branch: master
+    branch: main
   
 
 #Search
