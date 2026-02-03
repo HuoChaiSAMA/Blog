@@ -7,7 +7,7 @@ description: null
 excerpt: Henry的自制扫雷小游戏。采用c++语言，通过命令行窗口实现。
 headimg: https://s2.loli.net/2026/01/10/Rr8DL3UqlaytWJM.png
 keywords: null
-pin: null
+pin: true
 plugins:
 - katex
 readmore: true
