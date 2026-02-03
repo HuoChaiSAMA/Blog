@@ -18,8 +18,8 @@ timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://henerii.cn/blog
-root: /blog/
+url: https://henerii.cn/hexo
+root: /hexo/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -111,8 +111,10 @@ deploy:
   #   repo: git@154.3.1.117:/home/git/blog.git
   #   branch: master
   - type: git
-    repo: git@github.com:HuoChaiSAMA/HuoChaiSAMA.github.io.git
-    branch: main
+    # repo: git@github.com:HuoChaiSAMA/HuoChaiSAMA.github.io.git
+    # branch: main
+    repo: git@github.com:HuoChaiSAMA/hexo.git
+    branch: master
   
 
 #Search
