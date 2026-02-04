@@ -4,7 +4,7 @@ categories:
 - - H.C.Space
 date: '2026-02-04T12:12:06.087470+08:00'
 description: null
-excerpt: henerii.cn 重新变成主页
+excerpt: henerii.cn 重新变成主页
 headimg: https://s2.loli.net/2026/02/04/HSNgEnPAmUafirb.png
 keywords: null
 pin: null
@@ -14,7 +14,7 @@ readmore: true
 tags:
 - Update
 title: 重新启用主页
-updated: '2026-02-04T12:12:07.233+08:00'
+updated: '2026-02-04T13:05:48.047+08:00'
 ---
 # henerii.cn 现已成为主页站点，博客移动到 blog.henerii.cn
 
@@ -28,7 +28,7 @@ updated: '2026-02-04T12:12:07.233+08:00'
 ![](https://s2.loli.net/2026/02/04/HSNgEnPAmUafirb.png)
 {% endgallery %}
 
-{% frame iphone11::https://s2.loli.net/2026/02/04/iJn6t3UvwKQqoy2.jpg::alt=手机浏览器展示(未完全适配) %}
+{% frame iphone11::img=https://s2.loli.net/2026/02/04/iJn6t3UvwKQqoy2.jpg::alt=手机浏览器展示(未完全适配) %}
 
 ## 功能展示
 
