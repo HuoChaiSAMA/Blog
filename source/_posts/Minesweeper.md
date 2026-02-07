@@ -1024,7 +1024,7 @@ void send_error(int style) {
 
 ##### 2. 命令处理函数(简化示例)
 
-{% folding::green 点击查看完整源码%}
+{% folding green:: 点击查看完整源码%}
 
 ```c++
 void read_command()
