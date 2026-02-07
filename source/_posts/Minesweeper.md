@@ -1252,7 +1252,7 @@ void bfs_reveal_map()
 
 ##### 2. 点击操作函数(简化示例)
 
-{% folding::green 点击查看完整代码 %}
+{% folding green:: 点击查看完整代码 %}
 
 ```c++
 void click_to_show(point p) //普通单击操作
@@ -1374,7 +1374,7 @@ void click_to_help_show(point p) {
 
 ##### 1. 游戏结束函数(简化示例)
 
-{% folding::green 点击查看完整示例 %}
+{% folding green:: 点击查看完整示例 %}
 
 ```c++
 void gameover()
@@ -1429,7 +1429,7 @@ void gameover() {
 
 ###### 2. 结果展示函数(简化示例)
 
-{% folding::green 点击查看完整代码 %}
+{% folding green:: 点击查看完整代码 %}
 
 ```c++
 void endgame()
