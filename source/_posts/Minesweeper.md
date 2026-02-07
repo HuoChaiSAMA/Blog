@@ -724,11 +724,11 @@ int main()
 using namespace std;
 ```
 
-|   头文件   | 作用                                           |
-| :---------: | :--------------------------------------------- |
+|    头文件    | 作用                                           |
+| :-----------: | :--------------------------------------------- |
 | `iostream` | 处理输入输出                                   |
 |   `queue`   | STL中的队列数据类型，用于广度优先搜索(BFS)算法 |
-| `windows.h` | 用于`Sleep()` 函数实现延迟                     |
+| `windows.h` | 用于 `Sleep()` 函数实现延迟                  |
 | `stdlib.h` | 用于清屏和生成随机数                           |
 
 {% note warning:: 代码中使用了<windows.h> 以实现等待时间功能。mac用户可能无法运行这个程序 %}
@@ -840,7 +840,7 @@ void erase_selector() {
 ```c++
 +---+        X---X
 |   |        |   |
-+---+        X---X      
++---+        X---X    
 正常方格     选框方格
 ```
 
@@ -849,6 +849,101 @@ void erase_selector() {
 #### 四. 游戏逻辑核心函数
 
 ##### 1. 地雷生成函数(简化代码示例)
+
+{% folding green:: 点击查看完整源码 %}
+
+```c++
+void generate()
+{
+    memset(mine_map, 0, sizeof(mine_map));
+    srand(time(NULL)); //初始化
+    int i = 1;
+    int randx, randy;
+    bool judge_edge[4]; // 0 == left; 1 == top; 2 == button; 3 == right;
+    memset(judge_edge, 0, sizeof(judge_edge));
+    int cnt_edge = 0;
+    while (i <= 10) //随机出10个不重复坐标
+    {
+        randx = rand() % 9 + 1;
+        randy = rand() % 9 + 1;
+        if (mine_map[randx][randy] == 0)
+        {
+            if (cnt_edge < 4)
+            {
+                if (randx == 1 && judge_edge[0] == 0) //优先保证四个边上有地雷，防止地雷集中在某一小块(可优化)
+                {
+                    judge_edge[0] = 1;
+                    cnt_edge++;
+                    mine_map[randx][randy] = 1;
+                    mine[i].x = randx;
+                    mine[i].y = randy;
+                    i++;
+                    continue;
+                }
+                else if (randx == 9 && judge_edge[3] == 0)
+                {
+                    judge_edge[3] = 1;
+                    cnt_edge++;
+                    mine_map[randx][randy] = 1;
+                    mine[i].x = randx;
+                    mine[i].y = randy;
+                    i++;
+                    continue;
+                }
+                else if (randy == 1 && judge_edge[1] == 0)
+                {
+                    judge_edge[1] = 1;
+                    cnt_edge++;
+                    mine_map[randx][randy] = 1;
+                    mine[i].x = randx;
+                    mine[i].y = randy;
+                    i++;
+                    continue;
+                }
+                else if (randy == 9 && judge_edge[2] == 0)
+                {
+                    judge_edge[2] = 1;
+                    cnt_edge++;
+                    mine_map[randx][randy] = 1;
+                    mine[i].x = randx;
+                    mine[i].y = randy;
+                    i++;
+                    continue;
+                }
+            }
+            else //四个边均有雷后，完全随机生成
+            {
+                mine_map[randx][randy] = 1;
+                mine[i].x = randx;
+                mine[i].y = randy;
+                i++;
+            }
+        }
+        else
+        {
+            continue;
+        }
+    }
+    for (int i = 1; i <= 9; i++)
+    {
+        for (int j = 1; j <= 9; j++)
+        {
+            if (mine_map[i][j] == 0) //计算每个格子该显示的数字，方法是把周围格子的值累加(有雷为1没有为0)
+            {
+                calc_map[i][j] = mine_map[i][j - 1] + mine_map[i][j + 1] + mine_map[i - 1][j - 1] + mine_map[i - 1][j] + mine_map[i - 1][j + 1] + mine_map[i + 1][j - 1] + mine_map[i + 1][j] + mine_map[i + 1][j + 1];
+            }
+            else
+            {
+                calc_map[i][j] = 9;
+            }
+        }
+    }
+
+    return;
+}
+```
+
+{% endfolding %}
 
 ```c++
 void generate() {
@@ -928,6 +1023,138 @@ void send_error(int style) {
 ```
 
 ##### 2. 命令处理函数(简化示例)
+
+{% folding::green 点击查看完整源码%}
+
+```c++
+void read_command()
+{
+    // cout << "输入以下字符以操控(不区分大小写)：" << endl;
+    // cout << "W A S D : 移动选框" << endl;
+    // cout << "Z : 标记/问号/取消   X : 安全展开(对数字方格有效)   C : 直接展开" << endl;
+    // cout << "(num1,num2) : 连续输入两个数字，快速移动选框至目标方格" << endl;
+    // cout << "请输入：";
+    char c;
+    cin >> c;
+    if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+    {
+        erase_selector();
+        if (c >= 'A' && c <= 'Z')
+        {
+            c -= 'A' - 'a';
+        }
+        if (c == 'w')
+        {
+            if (selector.x > 1)
+            {
+                selector.x -= 1;
+            }
+            else
+            {
+                send_error(2);
+            }
+        }
+        else if (c == 'a')
+        {
+            if (selector.y > 1)
+            {
+                selector.y -= 1;
+            }
+            else
+            {
+                send_error(2);
+            }
+        }
+        else if (c == 's')
+        {
+            if (selector.x < 9)
+            {
+                selector.x += 1;
+            }
+            else
+            {
+                send_error(2);
+            }
+        }
+        else if (c == 'd')
+        {
+            if (selector.y < 9)
+            {
+                selector.y += 1;
+            }
+            else
+            {
+                send_error(2);
+            }
+        }
+        else if (c == 'z')
+        {
+            p1 = locate_point(selector);
+            if (display_map[p1.x][p1.y] == 'N' || display_map[p1.x][p1.y] == 'P' || display_map[p1.x][p1.y] == '?')
+            {
+                if (display_map[p1.x][p1.y] == 'N')
+                {
+                    // special_map[selector.x][selector.y] = 1;
+                    display_map[p1.x][p1.y] = 'P';
+                    tot--;
+                    if (mine_map[selector.x][selector.y] == 1)
+                    {
+                        tot_correct--;
+                    }
+                }
+                else if (display_map[p1.x][p1.y] == 'P')
+                {
+                    // special_map[selector.x][selector.y] = 2;
+                    display_map[p1.x][p1.y] = '?';
+                }
+                else if (display_map[p1.x][p1.y] == '?')
+                {
+                    // special_map[selector.x][selector.y] = 0;
+                    display_map[p1.x][p1.y] = 'N';
+                    if (mine_map[selector.x][selector.y] == 1)
+                    {
+                        tot_correct++;
+                    }
+                    tot++;
+                }
+            }
+            else
+            {
+                send_error(4);
+            }
+        }
+        else if (c == 'x')
+        {
+            click_to_help_show(selector);
+        }
+        else if (c == 'c')
+        {
+            click_to_show(selector);
+        }
+        draw_selector();
+    }
+    else if (c >= '0' && c <= '9')
+    {
+        int tx = c - '0';
+        int ty;
+        cin >> ty;
+        erase_selector();
+        if (tx >= 1 && tx <= 9 && ty >= 1 && ty <= 9)
+        {
+            selector.x = tx;
+            selector.y = ty;
+        }
+        else
+        {
+            send_error(1);
+        }
+        draw_selector();
+    }
+    return;
+}
+```
+
+{% endfolding %}
 
 ```c++
 void read_command() 
@@ -1025,6 +1252,95 @@ void bfs_reveal_map()
 
 ##### 2. 点击操作函数(简化示例)
 
+{% folding::green 点击查看完整代码 %}
+
+```c++
+void click_to_show(point p) //普通单击操作
+{
+    point pp = locate_point(p);
+    if (display_map[pp.x][pp.y] == 'P' || display_map[pp.x][pp.y] == '?') //防止翻开标记格
+    {
+        send_error(3);
+        return;
+    }
+    if (mine_map[p.x][p.y] == 1) //判断是否踩雷
+    {
+        gameover();
+    }
+    else //加入队列展开
+    {
+        q.push(p);
+        bfs_reveal_map();
+    }
+    return;
+}
+
+void click_to_help_show(point p) //双键单击操作
+{
+    point pp = locate_point(p);
+    point px;
+    if (display_map[pp.x][pp.y] == 'N' || display_map[pp.x][pp.y] == ' ') //只对数字格起效果
+    {
+        send_error(3);
+    }
+    else
+    {
+        int tot = 0;
+        // int rled = 0;
+        int delta_x[8] = {-1, -1, -1, 0, 0, 1, 1, 1};
+        int delta_y[8] = {-1, 0, 1, -1, 1, -1, 0, 1};
+        for (int j = 0; j <= 7; j++) //计算周围已标记方格数量
+        {
+            px.x = p.x + delta_x[j];
+            px.y = p.y + delta_y[j];
+            if (px.x < 1 || px.x > 9 || px.y < 1 || px.y > 9)
+            {
+                continue;
+            }
+            pp = locate_point(px);
+            if (display_map[pp.x][pp.y] == 'P')
+            {
+                tot++;
+            }
+        }
+        if (tot == calc_map[p.x][p.y]) //满足条件则加入队列展开
+        {
+            q.push(p);
+
+            for (int j = 0; j <= 7; j++)
+            {
+                px.x = p.x + delta_x[j];
+                px.y = p.y + delta_y[j];
+                if (px.x < 1 || px.x > 9 || px.y < 1 || px.y > 9)
+                {
+                    continue;
+                }
+                pp = locate_point(px);
+                if (display_map[pp.x][pp.y] == 'N')
+                {
+                    if (mine_map[px.x][px.y] == 1) //如果出现地雷方格(意味着玩家判断错误)就游戏结束
+                    {
+                        gameover();
+                        return;
+                    }
+                    display_map[pp.x][pp.y] = calc_map[px.x][px.y] + '0'; //展示方格
+                    if (calc_map[px.x][px.y] == 0)
+                    {
+                        display_map[pp.x][pp.y] = ' ';
+                    }
+                }
+            }
+
+            bfs_reveal_map(); //进行队列展开
+        }
+    }
+    return;
+}
+
+```
+
+{% endfolding %}
+
 ```c++
 void click_to_show(point p) {
     // 检查是否已标记
@@ -1056,7 +1372,50 @@ void click_to_help_show(point p) {
 
 #### 七. 游戏状态管理
 
-##### 1. 游戏结束函数
+##### 1. 游戏结束函数(简化示例)
+
+{% folding::green 点击查看完整示例 %}
+
+```c++
+void gameover()
+{
+    system("cls");
+    point px, pp;
+    // cout << "Game Over";
+    for (int i = 1; i <= 9; i++)
+    {
+        for (int j = 1; j <= 9; j++)
+        {
+            px.x = i;
+            px.y = j;
+            pp = locate_point(px);
+            if (display_map[pp.x][pp.y] == 'N') //地图谜底渲染
+            {
+
+                display_map[pp.x][pp.y] = calc_map[px.x][px.y] + '0';
+                if (calc_map[px.x][px.y] == 0)
+                {
+                    display_map[pp.x][pp.y] = ' ';
+                }
+                else if (calc_map[px.x][px.y] == 9)
+                {
+                    display_map[pp.x][pp.y] = '*';
+                }
+            }
+        }
+    }
+    flag = 0; //更新游戏状态
+    while (!q.empty()) //重置队列
+    {
+        q.pop();
+    }
+    endgame();
+    return;
+}
+
+```
+
+{% endfolding %}
 
 ```c++
 void gameover() {
@@ -1068,7 +1427,45 @@ void gameover() {
 }
 ```
 
-###### 2. 结果展示函数
+###### 2. 结果展示函数(简化示例)
+
+{% folding::green 点击查看完整代码 %}
+
+```c++
+void endgame()
+{
+    cout << "    1   2   3   4   5   6   7   8   9" << endl; //展示谜底
+    for (int i = 0; i <= 18; i++)
+    {
+        if (i % 2 == 1)
+        {
+            cout << i / 2 + 1 << ' ';
+        }
+        else
+        {
+            cout << "  ";
+        }
+        for (int j = 0; j <= 36; j++)
+        {
+            cout << display_map[i][j];
+        }
+        cout << endl;
+    }
+    if (tot == 0) //输出结果
+    {
+        cout << "You Did It !!!";
+    }
+    else
+    {
+        cout << "Game Over";
+    }
+
+    return;
+}
+
+```
+
+{% endfolding %}
 
 ```c++
 void endgame() {
@@ -1106,4 +1503,3 @@ int main() {
 ## 写在后面
 
 **DS老师**挑刺能力一流的 👍 👍👍
-
