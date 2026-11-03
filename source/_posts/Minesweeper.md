@@ -7,14 +7,14 @@ description: null
 excerpt: Henry的自制扫雷小游戏。采用c++语言，通过命令行窗口实现。
 headimg: https://s2.loli.net/2026/01/10/Rr8DL3UqlaytWJM.png
 keywords: null
-pin: true
+pin: false
 plugins:
 - katex
 readmore: true
 tags:
 - cpp
 title: Minesweeper.cpp
-updated: '2026-02-07T11:03:37.174+08:00'
+updated: '2026-11-03T23:43:24.480+08:00'
 ---
 ![游戏示例](https://s2.loli.net/2026/01/10/ZwhTuYXj9ApSb7I.png)
 
@@ -724,11 +724,12 @@ int main()
 using namespace std;
 ```
 
-|    头文件    | 作用                                           |
-| :-----------: | :--------------------------------------------- |
+
+|   头文件   | 作用                                           |
+| :---------: | :--------------------------------------------- |
 | `iostream` | 处理输入输出                                   |
 |   `queue`   | STL中的队列数据类型，用于广度优先搜索(BFS)算法 |
-| `windows.h` | 用于 `Sleep()` 函数实现延迟                  |
+| `windows.h` | 用于`Sleep()` 函数实现延迟                     |
 | `stdlib.h` | 用于清屏和生成随机数                           |
 
 {% note warning:: 代码中使用了<windows.h> 以实现等待时间功能。mac用户可能无法运行这个程序 %}
@@ -840,7 +841,7 @@ void erase_selector() {
 ```c++
 +---+        X---X
 |   |        |   |
-+---+        X---X    
++---+        X---X  
 正常方格     选框方格
 ```
 
