@@ -4,7 +4,7 @@ categories:
 - - 作文
 date: '2026-10-21T23:28:02.016298+08:00'
 description: null
-excerpt: 高三作文审题训练
+excerpt: 帕斯卡尔曾说：“我索取荣誉的对象不应该是太空，而应该是我的灵魂。”这是否意味着，人类对内在精神世界的探索，比对外在的宇宙空间的探索更重要？ 以上材料引发了你怎样的联想和思考？
 headimg: null
 keywords: null
 pin: null
@@ -14,7 +14,7 @@ readmore: true
 tags:
 - Chinese
 title: 内在精神世界与外在宇宙空间
-updated: '2026-10-21T23:37:02.899+08:00'
+updated: '2026-11-04T23:03:55.880+08:00'
 ---
 # 内在精神世界与外在宇宙空间
 
